@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="./">
+<meta charset="utf-8" />
+<title>కాగితం.com</title>
+<meta name="author" content="Santhosh Thottingal" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/jquery.ime.css" rel="stylesheet" />
+<link href="style.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu|Chathura|Dhurjati|Gidugu|Gurajada|Hind+Guntur|Lakki+Reddy|Mallanna|Mandali|NTR|Peddana|Ramabhadra|Ramaraja|Ravi+Prakash|Sree+Krushnadevaraya|Suranna|Suravaram|Tenali+Ramakrishna|Timmana" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="libs/rangy/rangy-core.js"></script>
+<script src="src/jquery.ime.js"></script>
+<script src="src/jquery.ime.selector.js"></script>
+<script src="src/jquery.ime.preferences.js"></script>
+<script src="src/jquery.ime.inputmethods.js"></script>
+<script src="script.js"></script>
+</head>
+
+<body>
+
+<div>
+<style>
+#toolbar div{display:inline-block;vertical-align:middle;}
+#toolbar div button,#toolbar div .file {
+
+    background: #fff;
+    font-size: 18px;
+    padding: 4px 8px;
+    border: 1px solid #bcb8b8cc;
+
+}
+</style>
+
+  <div class="container">
+  <div class="row">
+  
+    <div class="col-sm-12">
+      <div id="toolbar" class="phide">
+
+<div style='width:125px;'><div class="onoffswitch" data-lang='en'>
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch">ON</span>
+    </label>
+</div></div>
+<div class='imeSelector' hidden>
+          <select id="imeSelector" hidden>
+          </select>
+        </div>
+<div style='width:170px;'><select id='font' class="form-control">
+<option value='guntur' class='guntur'>హింద్ గుంటూర్</option> 
+<option value='ntr' class='ntr'>ఎన్టీఆర్</option> 
+<option value='gurujada' class='gurujada'>గుఱజాడ</option> 
+<option value='suranna' class='suranna'>సూరన్న</option>
+<option value='ramabhadra' class='ramabhadra'>రామభద్ర</option> 
+<option value='mallanna' class='mallanna'>మల్లన్న</option> 
+<option value='sree' class='sree'>శ్రీకృష్ణదేవరాయ</option> 
+<option value='timmana' class='timmana'>తిమ్మన</option> 
+<option value='mandali' class='mandali'>మండలి</option>
+<option value='ramaraja' class='ramaraja'>రామరాజ</option> 
+<option value='gidugu' class='gidugu'>గిడుగు</option> 
+<option value='suravaram' class='suravaram'>సురవరం</option> 
+<option value='dhurjati' class='dhurjati'>ధూర్జటి</option> 
+<option value='peddana' class='peddana'>పెద్దన</option> 
+<option value='tenali' class='tenali'>తెనాలి రామకృష్ణ</option> 
+<option value='lakkireddy' class='lakkireddy'>లక్కిరెడ్డి</option> 
+<option value='chatura' class='chatura'>చతుర</option> 
+<option value='raviprakash' class='raviprakash'>రవిప్రకాష్</option> 
+</select></div>
+ <div style='width:85px;'> <select id='font-sizes' class="form-control">
+<option value='10px'>10px</option>
+<option value='15px'>15px</option>
+<option value='20px'>20px</option>
+<option value='25px'>25px</option>
+<option value='30px'>30px</option>
+<option value='35px'>35px</option>
+<option value='40px'>40px</option>
+<option value='45px'>45px</option>
+<option value='50px'>50px</option>
+</select></div>
+<div style='width:35px;'>
+ <button id='copy' onclick="CopyToClipboard()" data-toggle="tooltip" data-placement="bottom" title="Copy"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+</div>
+<div style='width:35px;'> 
+	<button id='print' onclick="print_window()" data-toggle="tooltip" data-placement="bottom" title="Print" >
+		<i class="fa fa-print" aria-hidden="true"></i>
+	</button>
+</div>
+<div style='width:35px;'> 
+		<button id="input-file" onclick="openFile()">
+		<i class="fa fa-file" aria-hidden="true"></i>
+	</div>
+<div style='width:35px;'>
+
+<div class="dropdown">
+    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" onclick="saveFile();"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+
+</div>
+      <div contenteditable="true" id="ced"></div>
+      <p class='note phide' text-align="right">Press Ctrl+Space to change language</p>
+    </div>
+    
+    
+  </div>
+  </div>
+
+<div class='block'>
+
+
+<div class='content'>
+<div class='help'>
+How To Type
+</div>
+
+<table cellspacing="0" class='table table-striped'>
+						<!-- <tr><th colspan='6'>అచ్చులు (vowels)</th></tr> -->
+						<tbody><tr class="division">
+							<td><span>అ</span>a</td>
+							<td><span>ఆ</span>A, aa</td>
+							<td><span>ఇ</span>i</td>
+							<td><span>ఈ</span>I, ee, ii</td>
+							<td><span>ఉ</span>u</td>
+							<td><span>ఊ</span>U, uu, oo</td>
+						</tr><tr>
+							<td><span>ఎ</span>e</td>
+							<td><span>ఏ</span>E, ea</td>
+							<td><span>ఐ</span>ai</td>
+							<td><span>ఒ</span>o</td>
+							<td><span>ఓ</span>O, oe</td>
+							<td><span>ఔ</span>ou, au</td>
+						</tr><tr>
+							<td ></td>
+							<td><span>ఋ</span>R</td>
+							<td><span>ౠ</span>Ru</td>
+							<td ></td>
+							<td><span>అం</span>aM</td>
+							<td><span>అః</span>a@h</td>
+						</tr>
+						<tr >
+							<td><span>క</span>k</td>
+							<td><span>ఖ</span>K, kh</td>
+							<td><span>గ</span>g</td>
+							<td><span>ఘ</span>gh, G</td>
+							<td><span>ఙ</span>~m</td>
+                            <td></td>
+						</tr><tr>
+							<td ></td>
+							<td><span>చ</span>c, ch</td>
+							<td><span>ఛ</span>C,Ch</td>
+							<td><span>జ</span>j</td>
+							<td><span>ఝ</span>J</td>
+							<td><span>ఞ</span>~n</td>
+						</tr><tr>
+							<td><span>ట</span>T</td>
+							<td><span>ఠ</span>Th</td>
+							<td><span>డ</span>D</td>
+							<td><span>ఢ</span>Dh</td>
+							<td><span>ణ</span>N</td>
+                            <td></td>
+						</tr><tr>
+							<td ></td>
+							<td><span>త</span>t</td>
+							<td><span>థ</span>th</td>
+							<td><span>ద</span>d</td>
+							<td><span>ధ</span>dh</td>
+							<td><span>న</span>n</td>
+						</tr><tr>
+							<td><span>ప</span>p</td>
+							<td><span>ఫ</span>P, f, ph</td>
+							<td><span>బ</span>b</td>
+							<td><span>భ</span>B, bh</td>
+							<td><span>మ</span>m</td>
+                            <td></td>
+						</tr><tr>
+							<td><span>య</span>y</td>
+							<td><span>ర</span>r</td>
+							<td><span>ల</span>l</td>
+							<td><span>వ</span>v, w</td>
+							<td><span>శ</span>S</td>
+							<td><span>ష</span>sh</td>
+						</tr><tr>
+							<td><span>స</span>s</td>
+							<td></td>
+							<td><span>హ</span>h</td>
+							<td><span>ళ</span>L, lh</td>
+							<td><span>క్ష</span>x, ksh</td>
+							<td><span>ఱ</span>~r</td>
+						</tr>
+						<tr class="division">
+							<td><span>్</span>^</td>
+							<td><span>ం</span>M</td>
+							<td><span>₹</span>$$</td>
+							<td></td>
+                            <td></td>
+
+<td></td>						</tr>
+					</tbody></table>
+</div>
+</div>
+
+</body>
+</html>

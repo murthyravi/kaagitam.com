@@ -1,0 +1,295 @@
+div#toolbar {
+	background-color: #F9F9F9;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px 4px 0 0;
+	padding: 2px;
+	position: relative;
+}
+
+div#ced {
+
+    border: 1px solid #CCCCCC;
+    border-radius: 0 0 4px 4px;
+    height: 824px;
+    line-height: 1.5em;
+    overflow: auto;
+    padding: 10px 5px;
+    text-align: left;
+    font-size: 16px;
+	white-space: pre;
+
+}
+
+
+
+.langSelector,.imeSelector {
+	float: left;
+	display: block;
+	padding-right:5px;
+}
+
+#bold {
+	font-weight: bold;
+}
+
+#italic {
+	font-style: italic;
+	font-weight: bold;
+}
+
+#underline {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position:relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.help {
+    cursor:pointer;
+    transform: rotate(270deg);
+    font-size: 20px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    border-radius: 32px 32px 0px 0px;
+    position: absolute;
+    left: -164px;
+    top: 50%;
+
+}
+.open {
+    right: 0 !important;
+    transition: right 1s;
+
+}
+
+.content {
+background:#fff;
+    position: fixed;
+    top: 83px;
+
+	bottom: 40px;
+    right: -300px;
+    width: 300px;
+    border: 1px solid #000;
+    padding: 10px;
+ transition: right 1s;
+}
+.guntur{font-family: 'Hind Guntur', sans-serif;}
+.ntr{font-family: 'NTR', sans-serif;}
+.gurujada{font-family: 'Gurajada', serif;}
+.suranna{font-family: 'Suranna', serif;}
+.ramabhadra{font-family: 'Ramabhadra', sans-serif;}
+.mallanna{font-family: 'Mallanna', sans-serif;}
+.sree{font-family: 'Sree Krushnadevaraya', serif;}
+.timmana{font-family: 'Timmana', sans-serif;}
+.mandali{font-family: 'Mandali', sans-serif;}
+.ramaraja{font-family: 'Ramaraja', serif;}
+.gidugu{font-family: 'Gidugu', sans-serif;}
+.suravaram{font-family: 'Suravaram', serif;}
+.dhurjati{font-family: 'Dhurjati', sans-serif;}
+.peddana{font-family: 'Peddana', serif;}
+.tenali{font-family: 'Tenali Ramakrishna', sans-serif;}
+.lakkireddy{font-family: 'Lakki Reddy', cursive;}
+.chatura{font-family: 'Chathura', sans-serif;}
+.raviprakash{font-family: 'Ravi Prakash', cursive;}
+
+body{font-family: 'Open Sans', sans-serif;}
+table.table tr td span {
+    display: block;
+	font-family: 'NTR', sans-serif;
+}
+table.table tr td {
+
+    border-right: 1px solid #ccc;
+    padding: 2px 4px !important;
+    line-height: 16px !important;
+    width: 15%;
+    color: #000;
+
+}
+.table {
+    border: 1px solid #ccc;
+}
+.note {
+
+    text-align: right;
+    display: inline-block;
+    width: 63%;
+
+}
+.share a img {
+
+    width: 11%;
+    margin-top: 8px;
+
+}
+.share{
+display:inline-block;
+}
+.logo{
+	float:left;padding-top:16px;font-size: 41px;font-weight: bold;font-family: 'NTR', sans-serif;
+	}
+	.footer {
+    background: #000;
+    padding: 10px 0px;
+    color: #fff;
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+	h3{font-weight:600;}
+	 @media print {
+#ced{
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    padding: 50px 20px !important;}
+	.phide{display:none;}
+	.pshow{display:block;}
+	   }
+@media only screen and (max-width: 550px) {
+    .logo {
+    float: left;
+    padding-top: 22px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'NTR', sans-serif;
+    padding-left: 17px;
+}
+}
+.onoffswitch {
+    position: relative; width: 120px;display:inline-block;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    margin-bottom: 0px;
+
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner::before, .onoffswitch-inner::after {
+
+    display: block;
+    float: left;
+    width: 50%;
+    height: 32px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+
+}
+.onoffswitch-inner::before {
+
+    content: "తెలుగు";
+    padding-left: 10px;
+    background-color: #fff;
+    color: #060606;
+
+}
+.onoffswitch-inner::after {
+
+    content: "English";
+    padding-right: 10px;
+    background-color: #070708;
+    color: #FFFFFF;
+    text-align: right;
+
+}
+.onoffswitch-switch {
+
+    display: block;
+    width: 46px;
+    margin: 2px;
+    background: #080707;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 101px;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    transition: all 0.3s ease-in 0s;
+    text-align: center;
+    padding-top: 3px;
+    color: #fff;
+
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+.onoffswitch-switch.bt-active {
+
+    right: 70px !important;
+background: #fff;
+
+color: #000;
+}
+
+.onoffswitch-inner.active {
+
+    margin-left: -100% !important;
+
+}
