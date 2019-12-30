@@ -1,17 +1,9 @@
-var app = require('electron').remote; 
-var dialog = app.dialog;
-var fs = require('fs');
 $(document).ready(function () {
 	'use strict';
 	var $ced,
 	ime,
 	$imeSelector,
 	$langSelector;
-	const remote = require('electron').remote, 
-    app = remote.require('electron').app;
-
-	var basepath = app.getAppPath();
-	$.ime.setPath(basepath + "/rules/");
 	$ced = $('#ced');
 	// Initialise IME on this element
 	$ced.ime({
@@ -113,7 +105,7 @@ $(document).ready(function () {
 	})
         ime.setLanguage('te');
         $('.onoffswitch').data('lang', 'te');
-        $('#ced').addClass('guntur');
+        $('#ced').addClass('tenali');
 });
 
 $(document).ready(function () {
@@ -150,46 +142,6 @@ $(document).on('click', '.help', function () {
 	$('.content').toggleClass("open");
 
 })
-
-function saveFile()
-{
-	var content = $('#ced').text();
-
-	// You can obviously give a direct path without use the dialog (C:/Program Files/path/myfileexample.txt)
-	dialog.showSaveDialog((fileName) => {
-		if (fileName === undefined){
-			console.log("You didn't save the file");
-			return;
-		}
-
-    // fileName is a string that contains the path and filename created in the save file dialog.  
-    fs.writeFile(fileName, content, (err) => {
-        if(err){
-            alert("An error ocurred creating the file "+ err.message)
-        }
-    });
-}); 
-}
-
-function openFile(){
-	dialog.showOpenDialog((fileNames) => {
-		// fileNames is an array that contains all the selected
-		if(fileNames === undefined){
-			console.log("No file selected");
-			return;
-		}
-
-		fs.readFile(fileNames[0], 'utf-8', (err, data) => {
-			if(err){
-				alert("An error ocurred reading the file :" + err.message);
-				return;
-			}
-
-			// Change how to handle the file content
-			$('#ced').text(data);
-		});
-	});
-}
 
 function CopyToClipboard() {
 	var range = document.getSelection().getRangeAt(0);
